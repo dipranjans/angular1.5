@@ -1,0 +1,58 @@
+<h3>Angular Checkboxes and Radio Buttons</h3>
+		 <form>
+    
+        <!-- NAME INPUT -->
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" ng-model="formData.name">
+        </div>
+        
+        <!-- MULTIPLE CHECKBOXES -->
+        <label>Favorite Colors</label>
+        <div class="form-group">
+            <label class="checkbox-inline">
+                <input type="checkbox" name="favoriteColors" ng-model="formData.colors.red"> Red
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name="favoriteColors" ng-model="formData.colors.blue"> Blue
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name="favoriteColors" ng-model="formData.colors.green"> Green
+            </label>
+        </div>
+        
+        <!-- CUSTOM VALUE CHECKBOXES -->
+        <label>Personal Question</label>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="awesome" ng-model="formData.awesome" ng-true-value="'ofCourse'" ng-false-value="'iWish'">
+                Are you awesome?
+            </label>
+        </div>
+        
+        <!-- RADIO BUTTONS -->
+        <label>Chicken or the Egg?</label>
+        <div class="form-group">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="chickenEgg" value="chicken" ng-model="formData.chickenEgg">
+                    Chicken
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="chickenEgg" value="egg" ng-model="formData.chickenEgg">
+                    Egg
+                </label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-danger btn-lg">Send Away!</button>
+        
+    </form>
+    
+    <!-- SHOW OFF OUR FORMDATA OBJECT -->
+    <h2>Sample Form Object</h2>
+    <pre>
+        {{ formData }}
+    </pre>

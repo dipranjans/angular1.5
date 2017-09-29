@@ -1,0 +1,26 @@
+<!-- whatever is typed into this input will be used as the class for the div below -->
+<input type="text" ng-model="textType">
+
+<!-- the class will be whatever is typed into the input box above -->
+<div ng-class="textType">Look! I'm Words!</div>
+<br><hr>
+
+<!-- both input boxes below will be classes for the div -->
+<input type="text" ng-model="styleOne">
+<input type="text" ng-model="styleTwo">
+
+<!-- this div will take on both classes from above -->
+<div ng-class="[styleOne, styleTwo]">Look! I'm Words!</div>
+
+<br><hr>
+<!-- input box to toggle a variable to true or false -->
+<input type="checkbox" ng-model="awesome"> Are You Awesome?
+<input type="checkbox" ng-model="Primary"> Are You a Primary text?
+
+<!-- add the class 'text-success' if the variable 'awesome' is true -->
+<div ng-class="{ 'text-success': awesome, 'text-primary': Primary }">Dipranjan ngClass
+</div>
+
+<br><hr>
+<div class="item ng-class:[$ctrl.test1, $ctrl.test2]">Stuff Goes Here</div>
+<div class="item ng-class:{ 'text-danger': true }">Bangalore</div>

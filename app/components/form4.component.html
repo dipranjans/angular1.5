@@ -1,0 +1,33 @@
+<!-- FOR BOOLEAN VALUES =============================== -->
+<!-- for true values -->
+<div ng-show="$ctrl.hello">this is a welcome message</div>   
+
+ <!-- can also show if a value is false --> 
+<div ng-show="!$ctrl.hello">this is a goodbye message</div>   
+
+<!-- FOR EXPRESSIONS =============================== -->
+<!-- show if the appState variable is a string of goodbye -->
+<div ng-show="$ctrl.appState == 'goodbye'">this is a goodbye message</div> 
+
+<!-- FOR FUNCTIONS =============================== -->
+<!-- use a function defined in your controller to evaluate if true or false -->
+<div ng-hide="$ctrl.checkSomething()"></div> 
+
+<a href ng-click="$ctrl.goCats = !$ctrl.goCats">Toggle Cats</a>
+
+<img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="$ctrl.goCats">
+<br>
+<input type="text" ng-model="aminal">  
+<img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="aminal == 'cat'">
+
+
+<!-- show if our function evaluates to false -->
+<div ng-show="$ctrl.isEven(myNumber)">
+    <h2>The number is even.</h2>
+</div>
+
+<!-- show if our function evaluates to false -->
+<div ng-show="!$ctrl.isEven(myNumber)">
+    <h2>The number is odd.</h2>
+</div>
+

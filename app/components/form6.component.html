@@ -1,0 +1,49 @@
+<div class="alert alert-info">
+    <p>Sort Type: {{ $ctrl.sortType }}</p>
+    <p>Sort Reverse: {{ $ctrl.sortReverse }}</p>
+    <p>Search Query: {{ searchFish }}</p>
+</div>
+  
+<form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" placeholder="Search da Fish" ng-model="searchFish">
+      </div>      
+    </div>
+</form>
+  
+<table class="table table-bordered table-striped">    
+    <thead>
+      <tr>
+        <td>
+          <a href="#" ng-click="$event.preventDefault();$ctrl.sortType = 'name'; $ctrl.sortReverse = !$ctrl.sortReverse">
+            Sushi Roll 
+            <span ng-show="$ctrl.sortType == 'name' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="$ctrl.sortType == 'name' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="$event.preventDefault();$ctrl.sortType = 'fish'; $ctrl.sortReverse = !$ctrl.sortReverse">
+          Fish Type 
+            <span ng-show="$ctrl.sortType == 'fish' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="$ctrl.sortType == 'fish' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="$event.preventDefault();$ctrl.sortType = 'tastiness'; $ctrl.sortReverse = !$ctrl.sortReverse">
+          Taste Level 
+            <span ng-show="$ctrl.sortType == 'tastiness' && !$ctrl.sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="$ctrl.sortType == 'tastiness' && $ctrl.sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+      </tr>
+    </thead>    
+    <tbody>
+      <tr ng-repeat="roll in $ctrl.sushi | orderBy:$ctrl.sortType:$ctrl.sortReverse | filter:searchFish">
+        <td>{{ roll.name }}</td>
+        <td>{{ roll.fish }}</td>
+        <td>{{ roll.tastiness }}</td>
+      </tr>
+    </tbody>    
+</table>

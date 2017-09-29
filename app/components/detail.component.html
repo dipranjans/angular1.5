@@ -1,0 +1,14 @@
+<div class="row marketing" ng-if="$ctrl.result.Id">
+  <h3>Details View</h3>  
+  <div class="col-sm-9" style="border:1px solid #dddddd;padding-left: 5px;">    
+      <img ng-src="{{$ctrl.result.image}}" alt="">
+      <div style="min-width: 668px;">
+        <div class="caption">
+          <h3>{{$ctrl.result.title}}</h3>
+          <p>{{$ctrl.result.des}}</p>        
+        </div>    
+      </div>
+  </div>
+</div>
+
+<h2>{{$ctrl.result.Id>0?'':'No results found!!'}}</h2>
